@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linux SysAdmin Quiz</title>
+    <title>Linux SysAdmin Quiz | Ubaid Kh</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&display=swap');
         
         body {
             font-family: 'Manjari', sans-serif;
             background-color: #f3f4f6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .option-btn {
@@ -29,6 +33,7 @@
         .option-btn:hover {
             border-color: #3b82f6;
             background-color: #f9fafb;
+            transform: translateX(4px);
         }
 
         .correct-answer {
@@ -58,67 +63,108 @@
             50% { opacity: 0.8; }
             100% { opacity: 1; }
         }
+
+        main { flex: 1; }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
+<body class="p-4">
 
-    <div id="quiz-container" class="bg-white w-full max-w-lg shadow-2xl overflow-hidden rounded-lg">
-        <div class="bg-blue-700 p-6 text-white flex justify-between items-center">
-            <div>
-                <h1 class="text-xl font-bold">Linux SysAdmin Quiz</h1>
-                <p class="text-xs opacity-75">By Ubaid Kh</p>
-            </div>
-            <div id="timer-box" class="bg-blue-900 px-4 py-2 font-mono text-xl font-bold rounded">
-                00:<span id="seconds">30</span>
-            </div>
-        </div>
-
-        <div class="h-1 w-full bg-gray-100">
-            <div id="progress-bar" class="h-full bg-blue-500 transition-all duration-300" style="width: 0%"></div>
-        </div>
-
-        <div class="p-6">
-            <div id="loading" class="text-center py-10">
-                <p class="text-gray-500 italic">Fetching system questions...</p>
-            </div>
-
-            <div id="game-ui" class="hidden">
-                <div class="flex justify-between mb-4 text-xs font-bold text-gray-400 uppercase tracking-widest">
-                    <span>Task: <span id="current-q-num" class="text-blue-600">1</span> / <span id="total-q-num">0</span></span>
-                    <span>Score: <span id="score" class="text-green-600">0</span></span>
+    <main class="flex items-center justify-center">
+        <div id="quiz-container" class="bg-white w-full max-w-lg shadow-2xl overflow-hidden rounded-lg">
+            <div class="bg-blue-700 p-6 text-white flex justify-between items-center">
+                <div>
+                    <h1 class="text-xl font-bold">Linux SysAdmin Quiz</h1>
+                    <p class="text-xs opacity-75">by Ubaid KH</p>
                 </div>
-                
-                <h2 id="question-text" class="text-xl font-bold mb-6 leading-relaxed text-gray-800">
-                    Loading question...
-                </h2>
+                <div id="timer-box" class="bg-blue-900 px-4 py-2 font-mono text-xl font-bold rounded">
+                    00:<span id="seconds">30</span>
+                </div>
+            </div>
 
-                <div id="options-container" class="space-y-3">
+            <div class="h-1.5 w-full bg-gray-100">
+                <div id="progress-bar" class="h-full bg-blue-500 transition-all duration-300" style="width: 0%"></div>
+            </div>
+
+            <div class="p-6">
+                <div id="start-ui" class="py-4">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">Welcome, Root User</h2>
+                        <p class="text-gray-500 mb-4">Authorized by <span class="text-blue-700 font-bold">Ubaid Kh</span></p>
+                        
+                        <div class="flex justify-center space-x-8 text-2xl mb-2">
+                            <a href="https://ubaid.fun/" target="_blank" title="Portfolio" class="text-gray-400 hover:text-blue-600 transition-colors">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ubaid-kh-1476a737b/" target="_blank" title="LinkedIn" class="text-gray-400 hover:text-[#0077b5] transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/ubaidkh07" target="_blank" title="GitHub" class="text-gray-400 hover:text-black transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
                     </div>
 
-                <div class="mt-8 flex justify-between items-center h-12">
-                    <p id="msg-box" class="font-bold text-sm"></p>
-                    <button id="next-btn" class="hidden bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 font-bold rounded shadow-md transition-transform active:scale-95">
-                        Next Question
+                    <div class="bg-blue-50 border-l-4 border-blue-700 p-4 mb-8">
+                        <h3 class="font-bold text-blue-900 mb-3">Quiz Rules:</h3>
+                        <ul class="text-sm text-gray-700 space-y-3">
+                            <li><i class="fas fa-clock text-blue-600 mr-2"></i> <strong>30 Seconds:</strong> Per question limit.</li>
+                            <li><i class="fas fa-shield-alt text-blue-600 mr-2"></i> <strong>One Shot:</strong> Answers cannot be edited.</li>
+                            <li><i class="fas fa-terminal text-blue-600 mr-2"></i> <strong>Content:</strong> Core Linux administration tasks.</li>
+                        </ul>
+                    </div>
+
+                    <button id="start-btn" class="w-full bg-blue-700 text-white py-4 font-bold text-lg hover:bg-blue-800 transition-transform active:scale-95 rounded shadow-lg">
+                        START THE QUIZ
+                    </button>
+                </div>
+
+                <div id="loading" class="hidden text-center py-10">
+                    <div class="animate-spin inline-block w-8 h-8 border-4 border-blue-700 border-t-transparent rounded-full mb-4"></div>
+                    <p class="text-gray-500 italic">Accessing database...</p>
+                </div>
+
+                <div id="game-ui" class="hidden">
+                    <div class="flex justify-between mb-4 text-xs font-bold text-gray-400 uppercase tracking-widest">
+                        <span>Task: <span id="current-q-num" class="text-blue-600">1</span> / <span id="total-q-num">0</span></span>
+                        <span>Score: <span id="score" class="text-green-600">0</span></span>
+                    </div>
+                    
+                    <h2 id="question-text" class="text-xl font-bold mb-6 leading-relaxed text-gray-800">
+                        Loading...
+                    </h2>
+
+                    <div id="options-container" class="space-y-3"></div>
+
+                    <div class="mt-8 flex justify-between items-center h-12">
+                        <p id="msg-box" class="font-bold text-sm"></p>
+                        <button id="next-btn" class="hidden bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 font-bold rounded shadow-md transition-transform active:scale-95">
+                            Next Question <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="result-ui" class="hidden text-center py-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Quiz Finished!</h2>
+                    <div class="my-6 p-6 bg-gray-50 border border-gray-100 rounded-lg">
+                        <p class="text-gray-500 uppercase text-xs font-bold mb-1">Your Final Score</p>
+                        <p id="final-score" class="text-5xl font-black text-blue-700">0 / 0</p>
+                    </div>
+                    <button onclick="location.reload()" class="w-full bg-blue-700 text-white py-4 font-bold text-lg hover:bg-blue-800 transition-colors rounded shadow-lg">
+                        Restart
                     </button>
                 </div>
             </div>
-
-            <div id="result-ui" class="hidden text-center py-10">
-                <h2 class="text-3xl font-bold text-gray-800 mb-2">Quiz Finished!</h2>
-                <div class="my-6 p-6 bg-gray-50 border border-gray-100">
-                    <p class="text-gray-500 uppercase text-xs font-bold mb-1">Your Final Score</p>
-                    <p id="final-score" class="text-5xl font-black text-blue-700">0 / 0</p>
-                </div>
-                <button onclick="location.reload()" class="w-full bg-blue-700 text-white py-4 font-bold text-lg hover:bg-blue-800 transition-colors">
-                    Restart Quiz
-                </button>
-            </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="w-full text-center py-8 mt-12 border-t border-gray-200">
+        <p class="text-gray-500 text-sm font-medium">
+            &copy; 2026 <span class="text-blue-700 font-bold">Ubaid Kh</span>. All rights reserved.
+        </p>
+    </footer>
 
     <script>
-        // Update this URL to your specific Linux SysAdmin JSON file
-        const GITHUB_API_URL = "https://raw.githubusercontent.com/ubaidkh07/malayalamgk/refs/heads/main/gk.json";
+        const GITHUB_API_URL = "https://raw.githubusercontent.com/ubaidkh07/linuxadminquiz/refs/heads/main/quiz.json";
         const TIMER_LIMIT = 30;
         
         let questions = [];
@@ -129,6 +175,8 @@
         let canAnswer = true;
 
         const elements = {
+            startUI: document.getElementById('start-ui'),
+            startBtn: document.getElementById('start-btn'),
             loading: document.getElementById('loading'),
             gameUI: document.getElementById('game-ui'),
             resultUI: document.getElementById('result-ui'),
@@ -144,14 +192,24 @@
             msg: document.getElementById('msg-box')
         };
 
-        async function init() {
+        function init() {
+            elements.startBtn.onclick = startQuizFlow;
+        }
+
+        async function startQuizFlow() {
+            elements.startUI.classList.add('hidden');
+            elements.loading.classList.remove('hidden');
+
             try {
                 const res = await fetch(GITHUB_API_URL);
                 if (!res.ok) throw new Error();
                 questions = await res.json();
             } catch (e) {
-                // Fallback questions if API fails
-                questions = [{ "q": "Which command is used to change file permissions?", "a": ["chmod", "chown", "ls", "cd"], "correct": 0 }];
+                questions = [
+                    { "q": "Which command is used to change file permissions?", "a": ["chmod", "chown", "ls", "cd"], "correct": 0 },
+                    { "q": "Which directory contains system configuration files?", "a": ["/bin", "/etc", "/var", "/root"], "correct": 1 },
+                    { "q": "Which command is used to see the kernel version?", "a": ["ver", "kernel", "uname -r", "sysinfo"], "correct": 2 }
+                ];
             }
             
             elements.totalNum.innerText = questions.length;
@@ -162,7 +220,6 @@
 
         function renderQuestion() {
             if (currentIdx >= questions.length) return endQuiz();
-
             canAnswer = true;
             timeLeft = TIMER_LIMIT;
             elements.nextBtn.classList.add('hidden');
@@ -170,19 +227,18 @@
             elements.timerBox.classList.remove('timer-critical');
             
             const q = questions[currentIdx];
-            elements.question.innerText = q.q; // Uses the 'q' key from your JSON
+            elements.question.innerText = q.q;
             elements.currentNum.innerText = currentIdx + 1;
             elements.progress.style.width = `${(currentIdx / questions.length) * 100}%`;
 
             elements.options.innerHTML = "";
-            q.a.forEach((opt, i) => { // Uses the 'a' key from your JSON
+            q.a.forEach((opt, i) => {
                 const btn = document.createElement('button');
                 btn.className = "option-btn";
                 btn.innerText = opt;
                 btn.onclick = () => handleSelect(btn, i);
                 elements.options.appendChild(btn);
             });
-
             startTimer();
         }
 
@@ -197,7 +253,7 @@
                     clearInterval(timer);
                     canAnswer = false;
                     highlightCorrect();
-                    elements.msg.innerText = "Time's up!";
+                    elements.msg.innerText = "Operation Timed Out!";
                     elements.msg.className = "font-bold text-sm text-red-500";
                     elements.nextBtn.classList.remove('hidden');
                 }
@@ -212,17 +268,16 @@
             if (!canAnswer) return;
             canAnswer = false;
             clearInterval(timer);
-
             const correct = questions[currentIdx].correct;
             if (idx === correct) {
                 btn.classList.add('correct-answer');
                 score++;
                 elements.score.innerText = score;
-                elements.msg.innerText = "Correct!";
+                elements.msg.innerText = "Correct";
                 elements.msg.className = "font-bold text-sm text-green-600";
             } else {
                 btn.classList.add('wrong-answer');
-                elements.msg.innerText = "Incorrect!";
+                elements.msg.innerText = "Not Correct";
                 elements.msg.className = "font-bold text-sm text-red-500";
                 highlightCorrect();
             }
