@@ -1,0 +1,152 @@
+[
+  {
+    "q": "Which command is used to check disk space usage in Linux?",
+    "a": ["df", "du", "lsblk", "mount"],
+    "correct": 0
+  },
+  {
+    "q": "Which file contains encrypted user passwords?",
+    "a": ["/etc/passwd", "/etc/group", "/etc/profile", "/etc/shadow"],
+    "correct": 3
+  },
+  {
+    "q": "Which command is used to change file permissions?",
+    "a": ["chown", "setfacl", "chmod", "usermod"],
+    "correct": 2
+  },
+  {
+    "q": "Which service manager is used in most modern Linux distributions?",
+    "a": ["systemd", "init", "cron", "upstart"],
+    "correct": 0
+  },
+  {
+    "q": "What is the default port number for SSH?",
+    "a": ["443", "22", "21", "80"],
+    "correct": 1
+  },
+  {
+    "q": "Which command displays running processes in real time?",
+    "a": ["ps", "top", "uptime", "jobs"],
+    "correct": 1
+  },
+  {
+    "q": "Which directory contains system log files?",
+    "a": ["/var/tmp", "/usr/log", "/var/log", "/etc/log"],
+    "correct": 2
+  },
+  {
+    "q": "Which command is used to reboot a Linux system?",
+    "a": ["shutdown -h now", "poweroff", "halt", "reboot"],
+    "correct": 3
+  },
+  {
+    "q": "Which command is used to view memory usage?",
+    "a": ["top", "vmstat", "free", "uptime"],
+    "correct": 2
+  },
+  {
+    "q": "Which file defines static hostname mappings?",
+    "a": ["/etc/hostname", "/etc/hosts", "/etc/resolv.conf", "/etc/network"],
+    "correct": 1
+  },
+  {
+    "q": "Which command is used to search text inside files?",
+    "a": ["awk", "grep", "sed", "find"],
+    "correct": 1
+  },
+  {
+    "q": "Which command is used to archive files?",
+    "a": ["zip", "tar", "gzip", "cpio"],
+    "correct": 1
+  },
+  {
+    "q": "Which file controls user password aging?",
+    "a": ["/etc/login.defs", "/etc/passwd", "/etc/shadow", "/etc/security"],
+    "correct": 2
+  },
+  {
+    "q": "Which command is used to list block devices?",
+    "a": ["df", "mount", "lsblk", "blkid"],
+    "correct": 2
+  },
+  {
+    "q": "Which command shows system uptime?",
+    "a": ["top", "uptime", "time", "who"],
+    "correct": 1
+  },
+  {
+    "q": "Which file configures DNS servers?",
+    "a": ["/etc/hosts", "/etc/hostname", "/etc/resolv.conf", "/etc/dns.conf"],
+    "correct": 2
+  },
+  {
+    "q": "Which command is used to create a symbolic link?",
+    "a": ["ln -s", "link", "symlink", "mklink"],
+    "correct": 0
+  },
+  {
+    "q": "Which port is used by HTTP?",
+    "a": ["21", "22", "80", "443"],
+    "correct": 2
+  },
+  {
+    "q": "Which command is used to schedule recurring jobs?",
+    "a": ["at", "cron", "crontab", "batch"],
+    "correct": 2
+  },
+  {
+    "q": "Which directory contains user home directories?",
+    "a": ["/root", "/usr/home", "/home", "/users"],
+    "correct": 2
+  },
+  {
+    "q": "Which command displays kernel messages?",
+    "a": ["syslog", "journalctl", "dmesg", "klog"],
+    "correct": 2
+  },
+  {
+    "q": "Which command is used to mount a filesystem?",
+    "a": ["mount", "fsck", "blkid", "df"],
+    "correct": 0
+  },
+  {
+    "q": "Which file controls sudo permissions?",
+    "a": ["/etc/sudoers", "/etc/passwd", "/etc/group", "/etc/security"],
+    "correct": 0
+  },
+  {
+    "q": "Which command is used to change user password?",
+    "a": ["passwd", "chage", "usermod", "login"],
+    "correct": 0
+  },
+  {
+    "q": "Which directory contains device files?",
+    "a": ["/sys", "/proc", "/dev", "/run"],
+    "correct": 2
+  },
+  {
+    "q": "Which command shows disk partitions?",
+    "a": ["lsblk", "df", "fdisk -l", "mount"],
+    "correct": 2
+  },
+  {
+    "q": "Which file stores group information?",
+    "a": ["/etc/passwd", "/etc/shadow", "/etc/groups", "/etc/group"],
+    "correct": 3
+  },
+  {
+    "q": "Which command is used to compress files with gzip?",
+    "a": ["tar", "zip", "gzip", "compress"],
+    "correct": 2
+  },
+  {
+    "q": "Which command is used to logout from a shell?",
+    "a": ["exit", "logout", "quit", "close"],
+    "correct": 1
+  },
+  {
+    "q": "Which directory contains bootloader files?",
+    "a": ["/boot", "/etc/boot", "/loader", "/sys/boot"],
+    "correct": 0
+  }
+]
