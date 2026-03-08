@@ -1,41 +1,47 @@
-Linux Admin Quiz
------------------
-**LinuxAdminQuiz** is an interactive, client-side quiz app for testing Linux system administration skills. Features `index.html` for the UI and `quiz.json` for questions covering commands, permissions, processes, networking, and more. Runs entirely in the browser—no server needed. [docs.github](https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories)
+LinuxAdminQuiz
+----------------
+A fun, no-fuss quiz to sharpen your Linux admin skills. Just two files: index.html for the slick interface and quiz.json packed with questions on commands, permissions, processes, networking, and beyond. Runs 100% in your browser—no server setup required.
 
-## Live Demo
-Try the hosted version on InfinityFree (free hosting service):  
-[https://linuxadminquiz.free.nf/](https://linuxadminquiz.free.nf/?i=1)
+Try it live
+------------
+Check out the demo on InfinityFree: https://linuxadminquiz.free.nf/
 
-## Features
-- Multiple-choice questions with detailed explanations.
-- Real-time score tracking, progress indicator, next/previous navigation.
-- Responsive design works on desktop, tablet, and mobile.
-- Client-side only: Questions load dynamically from `quiz.json`.
+What you'll get
+----------------
+Multiple-choice questions with solid explanations
+Live score tracking and progress bar
+Easy next/prev buttons
+Works great on phone, tablet, or desktop
+All client-side—questions pull straight from quiz.json
 
-## Quick Start
-1. Clone the repo: `git clone https://github.com/ubaidkh07/linuxadminquiz.git`
-2. Open `index.html` in any browser.
-3. Quiz starts automatically—test your Linux admin knowledge!
+Get started in seconds
+-----------------------
+git clone https://github.com/ubaidkh07/linuxadminquiz.git
+Fire up index.html in your browser
+Dive in and test your Linux chops!
+Want it online like the demo? Upload to InfinityFree (totally free hosting).
 
-For live hosting like the demo, upload to InfinityFree (free PHP/MySQL hosting with no ads). [infinityfree](https://www.infinityfree.com)
+The files
+----------
+| File       | What it does                                              |
+| ---------- | --------------------------------------------------------- |
+| index.html | Everything—HTML, CSS, JS in one                           |
+| quiz.json  | Your questions, answers, and explanations (easy to tweak) |
 
-## File Structure
-| File       | Description |
-|------------|-------------|
-| `index.html` | Core quiz app (HTML/CSS/JS). [Latest commit](https://github.com/ubaidkh07/linuxadminquiz/commit/21d62762bb5f1d413f808826fd96f424615bedeb). |
-| `quiz.json`  | JSON data: questions, options, correct answers, explanations. Edit to customize. |
+Host on InfinityFree
+---------------------
+Grab a free account at infinityfree.com
+Drop your two files via their File Manager or FTP
+Pick a subdomain like yoursite.free.nf
+InfinityFree provides 25+ free subdomain extensions (such as .epizy.com or .rf.gd) for users who do not have their own domain name.
+Boom—live quiz, no ads, unlimited bandwidth
 
-## Hosting on InfinityFree
-- Sign up at [infinityfree.com](https://www.infinityfree.com) (free, unlimited bandwidth, PHP/MySQL support).
-- Upload `index.html` and `quiz.json` via File Manager or FTP.
-- InfinityFree provides 25+ free subdomain extensions (i choose free.nf)
-- Access via your `yoursite.free.nf` subdomain, as done for the live demo. [infinityfree](https://www.infinityfree.com)
+Make it yours
+--------------
+Add questions to quiz.json like: {"q": "What's this?", "a": ["opt1", "opt2"], "c": 0}
+Tweak styles or JS right in index.html
+Handles as many questions as you throw at it
 
-## Customization
-- Edit `quiz.json` to add/remove questions: `{ "q": "...", "a": [...], "c": 0}`.
-- Modify styles/scripts directly in `index.html`.
-- Supports unlimited questions with automatic pagination.
-
-## Contributing
-Fork, update `quiz.json` with new Linux admin questions, and submit a PR. Ensure accuracy and include explanations. Bug reports welcome via Issues.
-
+Help make it better
+--------------------
+Fork the repo, toss in fresh Linux admin questions (with explanations!), and send a PR. Bug spots? Hit up Issues.
