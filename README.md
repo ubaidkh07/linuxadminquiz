@@ -32,7 +32,7 @@ For live hosting like the demo, upload to InfinityFree (free PHP/MySQL hosting w
 - Access via your `yoursite.free.nf` subdomain, as done for the live demo. [infinityfree](https://www.infinityfree.com)
 
 ## Customization
-- Edit `quiz.json` to add/remove questions: `{ "question": "...", "options": [...], "correct": 0, "explanation": "..." }`.
+- Edit `quiz.json` to add/remove questions: `{ "q": "...", "a": [...], "c": 0}`.
 - Modify styles/scripts directly in `index.html`.
 - Supports unlimited questions with automatic pagination.
 
