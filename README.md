@@ -4,7 +4,7 @@ Linux Admin Quiz
 
 ## Live Demo
 Try the hosted version on InfinityFree (free hosting service):  
-[https://linuxadminquiz.free.nf/?i=1](https://linuxadminquiz.free.nf/?i=1) [free](https://free.nf)
+[https://linuxadminquiz.free.nf/](https://linuxadminquiz.free.nf/?i=1)
 
 ## Features
 - Multiple-choice questions with detailed explanations.
