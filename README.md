@@ -16,7 +16,9 @@ All client-side—questions pull straight from quiz.json
 
 Get started in seconds
 -----------------------
+```
 git clone https://github.com/ubaidkh07/linuxadminquiz.git
+```
 Fire up index.html in your browser
 Dive in and test your Linux chops!
 Want it online like the demo? Upload to InfinityFree (totally free hosting).
