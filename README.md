@@ -28,6 +28,7 @@ For live hosting like the demo, upload to InfinityFree (free PHP/MySQL hosting w
 ## Hosting on InfinityFree
 - Sign up at [infinityfree.com](https://www.infinityfree.com) (free, unlimited bandwidth, PHP/MySQL support).
 - Upload `index.html` and `quiz.json` via File Manager or FTP.
+- InfinityFree provides 25+ free subdomain extensions (i choose free.nf)
 - Access via your `yoursite.free.nf` subdomain, as done for the live demo. [infinityfree](https://www.infinityfree.com)
 
 ## Customization
@@ -38,5 +39,3 @@ For live hosting like the demo, upload to InfinityFree (free PHP/MySQL hosting w
 ## Contributing
 Fork, update `quiz.json` with new Linux admin questions, and submit a PR. Ensure accuracy and include explanations. Bug reports welcome via Issues.
 
-## License
-MIT License. See [LICENSE](LICENSE) or add one for compliance. [docs.github](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
